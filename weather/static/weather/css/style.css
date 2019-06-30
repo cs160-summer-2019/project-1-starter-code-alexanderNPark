@@ -1,3 +1,17 @@
 li {
     color: green;
 }
+
+#extremeContain{
+  margin-left:0px;
+}
+
+#textSpan{
+  color:green;
+  margin-left:0px;
+}
+#thunderImage{
+   display: block;
+   height: 130px;  
+   width: 100px;
+}
