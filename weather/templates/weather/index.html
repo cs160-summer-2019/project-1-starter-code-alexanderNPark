@@ -16,20 +16,30 @@
 	<!-- replace this html -->
 	<div id = "extremeContain" class="container">
 	
-		<h2 id="textSpan">Welcome To Weather Extreme!</h2>
+		<div class = "templateIntroWords">
+      <img src="/static/weather/assets/open.png"  width=25 height=25>
+    <span id="textSpan">Welcome To Weather Extreme!</span>
+       <img src="/static/weather/assets/open.png"  width=25 height=25>
+    </div>
     
-			<div class=”row”>
-        
-       <button id="thunderImage"></button>
+    <div id="weatherRecPane" class="container">
+      	<div class=”row”>
 
+         <button id="thunderImage"></button>
+         <button id="hurricaneImage"></button>
+          <button id="tsunamiImage"></button>
+          <button id="blizzardImage"></button>
+        </div>
+    </div>
+		
+    
+    <div class”row”>
+      <input id="textSearch" type="text" name="Search">
+      <button id="searchImage"></button>
     </div>
     
     <div class”row”>
-      <a href="/weather/comparison/alert/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Comparison with alert</a>
-    </div>
-    
-    <div class”row”>
-      <a href="/weather/comparison/alert/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Comparison with alert</a>
+     <button id="startPlanChase"></button>
     </div>
     
      <div class”row”>
