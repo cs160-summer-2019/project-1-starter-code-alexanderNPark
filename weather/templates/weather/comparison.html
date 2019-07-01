@@ -3,13 +3,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Comparison</title>
+	<title>Current Chase!</title>
 	
-	<link rel="stylesheet" type="text/css" href="{% static 'weather/vendors/bootstrap/css/bootstrap.css' %}" />
-	<link rel="stylesheet" type="text/css" href="{% static 'weather/css/style.css' %}" />
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'weather/css/letus.css' %}" />
 
 </head>
 <body>
 	<!-- your comparison interface here -->
+   <div class="container">
+      <div class = "row" >
+        <span id="title">Your Trip So Far:</span>
+      </div>
+     
+      <div id= "tableScrollPane" class="row">
+      
+      <table style="width:600px">
+
+        <tr>
+          <th>Time Arrived</th>
+          <th>Time To Leave</th> 
+          <th>Destination</th>
+        </tr>
+        <script>
+          str="";
+          today = new Date();
+          hours = ((today.getHours() + 11) % 12 + 1);
+          
+          var amPm = today.getHours() >= 12 ? "PM":"AM"
+          var min = today.getMinutes() >=10? today.getMinutes():"0"+today.getMinutes();
+         
+         var time =  hours + ":" + min;
+         
+         
+        
+          str+=time+" "+amPm;
+          str = str.fontsize(30)
+          
+          cities = ["Berkeley", "San Francisco", "Turd City", "Pleasanton", "Turd Tower"]
+         
+          
+          for(i=0;i<5;i++){
+             document.write("<tr>");
+             document.write("<th>"+"9:0"+(i)+"pm </th>")
+             document.write("<th>"+"9:0"+(i+1)+"pm </th>")
+             document.write("<th>"+cities[i]+"</th>")
+             document.write("</tr>");
+          }
+          
+        </script>
+       
+      </table>
+      
+    </div>
+     <br>
+    <div class="row">
+      <button>
+        <img src="/static/weather/assets/trash.png" width=50 height=50>
+        Select and Remove?
+      </button>
+     </div>
+     <br>
+      <div class=”row”>
+      <input id="textSearch" type="text" name="Search">
+      <button id="searchImage" onclick="location.href='/weather/forecast/alert/';"></button>
+     </div>
+     
+     <div class ="row" >
+        <span id="title">Recent Developments:</span>
+      </div>
+     
+      <div id="recentDevs" class="row">
+           <img src="/static/weather/assets/alert.png" width=50 height=50>Alert: Stanford is flooded! It sucks to be a student there.<br>
+           <img src="/static/weather/assets/alert.png" width=50 height=50>Alert: Berkeley has a thunderstorm.<br>
+          <img src="/static/weather/assets/alert.png" width=50 height=50>Alert: Kansas has a tornado.
+        
+      </div>
+     
+     <div class="row">
+          <button onclick="location.href='/weather/forecast/';">
+            Finished?
+       </button>
+          
+      </div>
+     
+  </div>
 </body>
 </html>

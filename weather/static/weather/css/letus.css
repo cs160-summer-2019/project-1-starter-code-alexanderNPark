@@ -1,0 +1,63 @@
+#title{
+  font-size:40px;
+  margin-left:0px;
+}
+
+#stormsNearYou{
+  
+  content:url("/static/weather/assets/usPlanned.png");
+  width:600px;
+  height:284px;
+}
+
+#tableScrollPane{
+  overflow-x: scroll;
+  overflow-y: scroll;
+  white-space: nowrap;
+  width:600px;
+  height:300px;
+  border: 1px solid black;
+}
+
+#likeIt{
+  background-color:red;
+}
+
+#textSearch{
+  width:500px;
+  height:30px;
+}
+
+#searchImage{
+  background-image:url("/static/weather/assets/iconSearch.png");
+  background-size: 28px 28px;
+  vertical-align: bottom;
+  height: 30px;  
+  width: 30px;
+}
+
+td, th {
+  border: 1px solid orange;
+}
+
+#recentDevs{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  white-space: nowrap;
+  width:600px;
+  height:100px;
+  margin:0 ! important;
+  padding:10 ! important;
+}
+
+
+
+
+#textCompare{
+  width:325px;
+  height:30px;
+}
+
+#searchCompare{
+  vertical-align: bottom;
+}

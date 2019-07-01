@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Current Weather</title>
+	<title>Weather Extreme</title>
 	
 	<!-- <link rel="stylesheet" type="text/css" href="{% static 'weather/vendors/bootstrap/css/bootstrap.css' %}" /> -->
 	<link rel="stylesheet" type="text/css" href="{% static 'weather/css/style.css' %}" />
@@ -33,26 +33,26 @@
     </div>
 		
     
-    <div class”row”>
+    <div class=”row”>
       <input id="textSearch" type="text" name="Search">
-      <button id="searchImage"></button>
+      <button id="searchImage" onclick="location.href='/weather/forecast/alert/';"></button>
     </div>
     
-    <div class”row”>
-     <button id="startPlanChase"></button>
+    <div class=”row”>
+     <button id="startPlanChase" onclick="location.href='/weather/comparison/';"> Start Planning Chase!</button>
     </div>
     
-     <div class”row”>
-       <a href="/weather/comparison/alert/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Your Current Chase</a>
+     <div class=”row”>
+        <button id="currentChase" onclick="location.href='/weather/forecast/';">Your Current Chase</button>
     </div>
+    
+     <div class=”row”>
+        <button id="usPlanChase" onclick="location.href='/weather/comparison/alert/';">Location Compare</button>
+    </div>
+    
 
 	</div>
   
-
-		<a href="/weather/forecast/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Forecast</a>
-		<a href="/weather/forecast/alert/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Forecast with alert</a>
-		<a href="/weather/comparison/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Comparison</a>
-		<a href="/weather/comparison/alert/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Comparison with alert</a>
 	
 	
 	<!-- /replace this html -->

@@ -3,13 +3,118 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Comparison - Alert!</title>
+	<title>Recommended</title>
 	
 	<link rel="stylesheet" type="text/css" href="{% static 'weather/vendors/bootstrap/css/bootstrap.css' %}" />
-	<link rel="stylesheet" type="text/css" href="{% static 'weather/css/style.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'weather/css/letus.css' %}" />
 
 </head>
 <body>
 	<!-- your comparison interface with alert here -->
+  <div class="container">
+      <div class = "row" >
+        <span id="title">Storms Near You</span>
+      </div>
+    
+     <div class = "row" >
+        <img id="stormsNearYou">
+      </div>
+      
+    <div class = "row" >
+        Recommended Path in Blue.
+    </div>
+    
+   
+    <div class = "row" >
+      
+      <input id="textCompare" type="text" value="Another City">
+      <button id="searchCompare">Compare</button>
+    
+      </div>
+    
+    <div id= "tableScrollPane" class="row">
+      
+      <table style="width:600px">
+
+        <tr>
+          <th>City</th>
+          <script>
+            
+          str="";
+          today = new Date();
+          hours = ((today.getHours() + 11) % 12 + 1);
+          
+          var amPm = today.getHours() >= 12 ? "PM":"AM"
+          var min = today.getMinutes() >=10? today.getMinutes():"0"+today.getMinutes();
+         
+         var time =  hours + ":" + min;
+            
+            for( i = 0;i<12;i++){
+              hours = ((today.getHours() + 11+i) % 12 + 1);
+              amPm = today.getHours()+i >= 12 ? "PM":"AM"
+              time =  ""+hours + ":" + min+" "+amPm;
+              document.write("<th>"+time+"</th>");
+            }
+             document.write("</tr>")
+          </script>
+         
+        
+        <script>
+          
+          str=""
+          
+          cities = ["Berkeley", "San Francisco", "Turd City", "Pleasanton", "Turd Tower"]
+         
+          
+          for(i=0;i<5;i++){
+             document.write("<tr>");
+             document.write("<th>"+cities[i]+"</th>")
+            
+             for( j = 0;j<12;j++){
+               str="<th>"
+               temp = 50+Math.floor(Math.random()*50);
+
+               str+=temp+"&#176;F<br>"
+               str+=Math.floor(Math.random()*50)+"% rain<br>"
+               str+=Math.floor(Math.random()*50)+"mph wind speed<br>"
+
+
+               document.write(str+" </th>")
+             }
+             document.write("</tr>");
+          }
+          
+        </script>
+       
+      </table>
+      
+    </div>
+    
+    <div class="row">
+      <button id = "likeIt" onclick="location.href='/weather/comparison/';">
+        Like It Enough?
+      </button>
+    </div>
+    
+     <div class="row">
+      <span style="font-size:30px">Recent Alerts!</span>
+    </div>
+    
+    <div id="recentDevs" class="container">
+           <div class="row">
+             <img src="/static/weather/assets/alert.png" width=50 height=50>Alert: Stanford is flooded!<br>
+           </div>
+       <div class="row">
+           <img src="/static/weather/assets/alert.png" width=50 height=50>Alert: Berkeley has a thunderstorm.<br>
+         </div>
+       <div class="row">
+          <img src="/static/weather/assets/alert.png" width=50 height=50>Alert: Kansas has a tornado.
+         </div>
+      </div>
+         
+    
+    
+  </div>
+  
 </body>
 </html>

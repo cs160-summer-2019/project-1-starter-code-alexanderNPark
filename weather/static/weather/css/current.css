@@ -1,0 +1,11 @@
+#currentCity{
+  margin:0px;
+}
+
+#recentDevs{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  white-space: scroll;
+  width:500px;
+  height:100px;
+}

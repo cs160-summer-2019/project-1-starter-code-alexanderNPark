@@ -5,12 +5,98 @@
 <head>
 	<title>Forecast</title>
 	
-	<link rel="stylesheet" type="text/css" href="{% static 'weather/vendors/bootstrap/css/bootstrap.css' %}" />
-	<link rel="stylesheet" type="text/css" href="{% static 'weather/css/style.css' %}" />
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'weather/css/current.css' %}" />
 
 </head>
 <body>
 	<!-- your single-location forecast interface here -->
+  <div class="container">
+     <div id="currentCity" class="row">
+    <script>
+    cities = ["Berkeley", "San Francisco", "Turd City", "Pleasanton", "Turd Tower"]
+    str = cities[Math.floor(Math.random()*cities.length)]
+    str = str.fontsize(30)
+    document.write(str)
+    </script>
+    </div>
+    
+    <div  class="row">
+     
+        <script>
+          
+          //document.getElementById("myImg").src = "/static/weather/assets/badW"+(Math.floor(Math.Random()*5))+".png";
+         i = Math.floor(Math.random()*5)
+         str = "<img src= '/static/weather/assets/badW"+i+".png' width=300 height=300>"
+         document.write(str)
+      
+      </script>
+      
+      
+    </div>
+    
+    
+     <div  class="row">
+   <script>
+      var today = new Date();
+      var date = (today.getMonth()+1)+'\\'+today.getDate()+"\\"+today.getFullYear()
+      date = date.fontsize(30)
+      document.write(" "+date+"<br>");
+     
+     str="";
+          today = new Date();
+          hours = ((today.getHours() + 11) % 12 + 1);
+          
+          var amPm = today.getHours() >= 12 ? "PM":"AM"
+          var min = today.getMinutes() >=10? today.getMinutes():"0"+today.getMinutes();
+         
+         var time =  hours + ":" + min;
+         
+         
+        
+          str+=time+" "+amPm;
+          str = str.fontsize(30)
+     document.write(str)
+    </script>
+    </div>
+    
+    <div class="row">
+      <script>
+        temp = 50+Math.floor(Math.random()*50);
+        str=temp+"&#176;F<br>"
+        str+=Math.floor(Math.random()*50)+"% rain<br>"
+        str+=Math.floor(Math.random()*50)+"mph wind speed<br>"
+        
+        document.write(str)
+        
+        today = new Date();
+          hours = ((today.getHours() + 11) % 12 + 1);
+          
+          var amPm = today.getHours() >= 12 ? "PM":"AM"
+          var min = today.getMinutes()+1 >=10? today.getMinutes()+1:"0"+today.getMinutes()+1;
+         
+         var time =  hours + ":" + min+" "+amPm;
+        
+        document.write("<button>Next:"+time+"</button>")
+      </script>
+    </div>
+    
+    <div class="row">
+      <span style="font-size:30px">Recent Alerts!</span>
+    </div>
+    
+    <div id="recentDevs" class="row">
+           <img src="/static/weather/assets/alert.png" width=50 height=50>Alert: Stanford is flooded!<br>
+           <img src="/static/weather/assets/alert.png" width=50 height=50>Alert: Berkeley has a thunderstorm.<br>
+          <img src="/static/weather/assets/alert.png" width=50 height=50>Alert: Kansas has a tornado.
+        
+      </div>
+    
+    
+  </div>
+ 
+  
+  
 </body>
 </html>
 

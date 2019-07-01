@@ -1,0 +1,17 @@
+#searchTitle{
+   margin-left:0px;
+   font-size:40px;
+}
+
+#otherinfo{
+  font-size:20px;
+  height: 160px;  
+  width: 500px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  white-space: nowrap;
+}
+
+#timeInsert{
+  width: 500px;
+}

@@ -3,14 +3,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Forecast - Alert!</title>
+	<title>Search Results For Berkeley</title>
 	
-	<link rel="stylesheet" type="text/css" href="{% static 'weather/vendors/bootstrap/css/bootstrap.css' %}" />
-	<link rel="stylesheet" type="text/css" href="{% static 'weather/css/style.css' %}" />
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'weather/css/search.css' %}" />
 
 </head>
+  
+ 
 <body>
 	<!-- your single-location forecast with alert interface here -->
+  <div id = "searchTitle" class="container">
+    Search Results For Berkeley, CA On
+    <script>
+      var today = new Date();
+      var date = (today.getMonth()+1)+'\\'+today.getDate()+"\\"+today.getFullYear()
+      date = date.fontsize(30)
+      document.write(" "+date+"<br>");
+    </script>
+  </div>
+  
+  <div class = "container">
+     <div class = "row">
+       <img id ="statusWeather" src="/static/weather/assets/bsunny.png">
+    </div>
+    <div class = "row">
+       <script>
+          str="";
+          today = new Date();
+          hours = ((today.getHours() + 11) % 12 + 1);
+          prevHours = ((today.getHours()-1 + 11) % 12 + 1);
+          nextHours = ((today.getHours()+1 + 11) % 12 + 1);
+         
+          var amPm =  today.getHours() >= 12 ? "PM":"AM"
+          var min = today.getMinutes() >=10? today.getMinutes():"0"+today.getMinutes();
+         
+         var time =  hours + ":" + min;
+         var prevtime =  prevHours + ":" + min;
+         var nexttime =  nextHours + ":" + min;
+         
+          prevtime  = "<button>"+prevtime.fontsize(30)+"</button>"
+          nexttime = "<button>"+nexttime.fontsize(30)+"</button>"
+         
+          str+=time+" "+amPm;
+          str = str.fontsize(30)
+         
+          document.write(prevtime)
+          document.write(str)
+          document.write(nexttime)
+      </script>
+    </div>
+    
+    <div class = "row">
+      <div class = "col">
+          70&#176;F
+      </div>
+      <div class = "col">
+          10% rain 
+      </div>
+      <div class = "col">
+          Wind Speed: 10 mph 
+      </div>
+      
+    </div>
+    
+    <div id="otherinfo" class = "row">
+        Alerts and Other Info:
+        <div>
+          <ol>
+            <li> 
+              Turd on the Road blocking traffic on highway 101.
+            </li>
+             <li> 
+              Turds flew into power line causing turds.
+            </li>
+            
+          </ol>
+      </div>
+    </div>
+    
+    
+     <div class = "row">  
+         <input id="timeInsert" type="text" name="Search" value="Enter time here...">
+         <button>
+           Add
+       </button>
+     </div>
+    
+     <div class = "row">  
+         <input id="timeInsert" type="text" name="Search" value="Another City Here...">
+         <button>
+           Compare
+       </button>
+     </div>
+    
+    
+  </div>
+ 
+  
+  
+  
+ 
 </body>
 </html>
 
